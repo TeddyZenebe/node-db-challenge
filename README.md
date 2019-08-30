@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+RDB is a database structured used store data in the table and creates relations among stored items of information, where as SQL is the language used to interact with the database. That means SQL is  a structural query language used to select, create, update, and delete records, structure and database within the RDBMS. 
+
 - [ ] Why do tables need a `primary key`?
+
+A primary key in table required to uniquely identifies each row/record in a database table.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+Foreign key 
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+ Intermediary table that holds foreign keys that reference the primary key on the related tables
 
 ## Minimum Viable Product
 
