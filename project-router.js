@@ -27,7 +27,7 @@ router.get('/resources',(req, res)=>{
 router.get('/:id/task',(req, res)=>{
 
     const id = req.params.id
-    helper.findProj(id)
+    helper.findTask(id)
           .then(tasks => {
              res.json(tasks);
            })
