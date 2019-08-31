@@ -7,7 +7,13 @@ const router = express.Router();
 router.get('/',(req, res)=>{
     helper.findProj()
     .then(proj => {
-        res.json(proj);
+        const newpro = proj.map(obj=>{if(obj.completed === 0){
+            const newobj = {... obj, completed: false}
+            return newobj
+        }else {
+            return obj
+        }})
+        res.json(newpro);
       })
       .catch(err => {
         res.status(500).json({ message: 'Server failed to get the projects' });
@@ -29,7 +35,13 @@ router.get('/:id/task',(req, res)=>{
     const id = req.params.id
     helper.findTask(id)
           .then(tasks => {
-             res.json(tasks);
+            const newtask = tasks.map(obj=>{if(obj.completed === 0){
+                const newobj = {... obj, completed: false}
+                return newobj
+            }else {
+                return obj
+            }})
+             res.json(newtask);
            })
           .catch(err => {
             res.status(500).json({ message: 'Server failed to get the project tasks' });
