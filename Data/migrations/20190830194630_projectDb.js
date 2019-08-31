@@ -15,9 +15,10 @@ exports.up = function(knex) {
         tbl.text('description')
       }).createTable('task', tbl => {
         tbl.increments();
+        tbl.integer('project_id')
         tbl.text('description')
-           .notNullable()
-        tbl.text('note')
+           .notNullable();
+        tbl.text('note');
         tbl.boolean('completed')
            .defaultTo(false);
       })     
